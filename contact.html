@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Solitaire Classic!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        nav {
+            background-color: #34495e;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: #2c3e50;
+        }
+        
+        main {
+            background-color: white;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .contact-card {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .contact-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .contact-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-card a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.75rem 1.5rem;
+            background-color: #e3f2fd;
+            border-radius: 25px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        
+        .contact-card a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .support-info {
+            background-color: #e8f4f8;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .support-info h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .support-info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .support-info li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .support-info li:before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .response-time {
+            background-color: #fff3cd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .response-time h4 {
+            color: #856404;
+            margin-bottom: 0.5rem;
+        }
+        
+        .response-time p {
+            color: #856404;
+            margin: 0;
+        }
+        
+        .faq-link {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .faq-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+            border: 2px solid #3498db;
+            border-radius: 25px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .faq-link a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .contact-info {
+            margin: 1rem 0;
+        }
+        
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav li {
+                margin: 0.25rem 0;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Solitaire - Classic!</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rules.html">Rules</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="container">
+            <div class="hero">
+                <h2>Get in Touch</h2>
+                <p>We'd love to hear from you! Whether you have questions about the game, need technical support, or want to share feedback, we're here to help.</p>
+            </div>
+            
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <div class="icon">📧</div>
+                    <h3>Email Support</h3>
+                    <p>Send us an email and we'll get back to you as soon as possible.</p>
+                    <a href="mailto:infowizkidproductions@gmail.com">infowizkidproductions@gmail.com</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="icon">🎮</div>
+                    <h3>Game Support</h3>
+                    <p>Having trouble with the game? We're here to help with technical issues.</p>
+                    <a href="mailto:infowizkidproductions@gmail.com?subject=Game Support">Get Game Support</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="icon">💡</div>
+                    <h3>Feedback & Suggestions</h3>
+                    <p>Share your ideas and help us improve the game experience.</p>
+                    <a href="mailto:infowizkidproductions@gmail.com?subject=Feedback">Send Feedback</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="icon">🐛</div>
+                    <h3>Bug Reports</h3>
+                    <p>Found a bug? Please let us know so we can fix it quickly.</p>
+                    <a href="mailto:infowizkidproductions@gmail.com?subject=Bug Report">Report a Bug</a>
+                </div>
+            </div>
+            
+            <div class="support-info">
+                <h3>How We Can Help</h3>
+                <ul>
+                    <li>Technical support and troubleshooting</li>
+                    <li>Game feature explanations and tips</li>
+                    <li>Account and progress issues</li>
+                    <li>Bug reports and fixes</li>
+                    <li>Feature requests and feedback</li>
+                    <li>Premium subscription support</li>
+                    <li>General game questions</li>
+                </ul>
+            </div>
+            
+            <div class="response-time">
+                <h4>📅 Response Time</h4>
+                <p>We typically respond to emails within 24-48 hours during business days. For urgent technical issues, we'll do our best to respond as quickly as possible.</p>
+            </div>
+            
+            <div class="faq-link">
+                <h3>Before You Contact Us</h3>
+                <p>You might find the answer to your question in our FAQ section:</p>
+                <a href="faqs.html">View Frequently Asked Questions</a>
+            </div>
+            
+            <div style="text-align: center; margin: 2rem 0; padding: 2rem; background-color: #f8f9fa; border-radius: 10px;">
+                <h3 style="color: #2c3e50; margin-bottom: 1rem;">Thank You for Playing!</h3>
+                <p style="color: #666; font-size: 1.1rem;">Your feedback and support help us continue to improve Solitaire Classic! We appreciate every player and look forward to hearing from you.</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="contact-info">
+                <p>If you have any questions please contact us:</p>
+                <p>By Email: <a href="mailto:infowizkidproductions@gmail.com">infowizkidproductions@gmail.com</a></p>
+            </div>
+            <p>&copy; 2022 WizKid Productions</p>
+        </div>
+    </footer>
+</body>
+</html>

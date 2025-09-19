@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solitaire - Classic!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        nav {
+            background-color: #34495e;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: #2c3e50;
+        }
+        
+        main {
+            background-color: white;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature-card {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .feature-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .features-list {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .features-list h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .features-list ul {
+            list-style-type: none;
+            columns: 2;
+            column-gap: 2rem;
+        }
+        
+        .features-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+            break-inside: avoid;
+        }
+        
+        .features-list li:before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .download-section {
+            text-align: center;
+            background-color: #3498db;
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .download-section h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .download-button {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .download-button:hover {
+            background-color: #c0392b;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .contact-info {
+            margin: 1rem 0;
+        }
+        
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .features-list ul {
+                columns: 1;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav li {
+                margin: 0.25rem 0;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Solitaire - Classic!</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="rules.html">Rules</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="container">
+            <div class="hero">
+                <h2>Welcome to Solitaire Classic!</h2>
+                <p>Enjoy this fun and challenging Classic Solitaire game! With a modern design, easy controls and lots of game options, this game will give you plenty of enjoyment as you sharpen your thinking skills.</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <h3>🎮 Easy Controls</h3>
+                    <p>Tap or drag cards to move them with intuitive touch controls designed for mobile gaming.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🏆 Multiple Game Modes</h3>
+                    <p>Play Standard and Vegas Scoring modes with different challenges and objectives.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🎨 Customizable</h3>
+                    <p>Customize your card backs and backgrounds to make the game truly yours.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🏅 Achievements</h3>
+                    <p>Unlock achievements, compete on leaderboards, and complete daily challenges.</p>
+                </div>
+            </div>
+            
+            <div class="features-list">
+                <h3>Game Features</h3>
+                <ul>
+                    <li>Tap or drag cards to move them</li>
+                    <li>Standard and Vegas Scoring</li>
+                    <li>Portrait and landscape modes</li>
+                    <li>Customize your card backs and backgrounds</li>
+                    <li>Earn coins to unlock special designs</li>
+                    <li>Daily Challenges that you can send to friends</li>
+                    <li>Unlock Achievements</li>
+                    <li>Leaderboards</li>
+                    <li>Draw 1 and Draw 3 cards</li>
+                    <li>Right or left handed play</li>
+                    <li>Unlimited Undos</li>
+                    <li>Auto Complete to finish game</li>
+                    <li>High score for each game mode</li>
+                    <li>Game Statistics</li>
+                    <li>Beautiful graphics with great gameplay!</li>
+                </ul>
+            </div>
+            
+            <div class="download-section">
+                <h3>Find us in the App Store</h3>
+                <a href="#" class="download-button">Download</a>
+                <p style="margin-top: 1rem; font-style: italic;">Popular with casual card game players and casino lovers alike.</p>
+            </div>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <h3 style="color: #2c3e50;">A Great Classic Solitaire Game</h3>
+                <p style="font-size: 1.1rem; color: #666;">Beautiful, challenging, fun and addictive!</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="contact-info">
+                <p>If you have any questions please contact us:</p>
+                <p>By Email: <a href="mailto:infowizkidproductions@gmail.com">infowizkidproductions@gmail.com</a></p>
+            </div>
+            <p>&copy; 2022 WizKid Productions</p>
+        </div>
+    </footer>
+</body>
+</html>

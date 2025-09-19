@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solitaire Rules - Classic!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        nav {
+            background-color: #34495e;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: #2c3e50;
+        }
+        
+        main {
+            background-color: white;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            color: #34495e;
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        h4 {
+            color: #2c3e50;
+            margin: 1rem 0 0.5rem 0;
+        }
+        
+        .game-area {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .game-area h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .scoring-table {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .scoring-table h4 {
+            margin-bottom: 1rem;
+        }
+        
+        .scoring-table ul {
+            list-style: none;
+        }
+        
+        .scoring-table li {
+            padding: 0.25rem 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .scoring-table li:last-child {
+            border-bottom: none;
+        }
+        
+        .options-list {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .options-list h4 {
+            margin-bottom: 1rem;
+        }
+        
+        .options-list ul {
+            list-style: none;
+        }
+        
+        .options-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .options-list li:before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .controls-section {
+            background-color: #e8f4f8;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .contact-info {
+            margin: 1rem 0;
+        }
+        
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav li {
+                margin: 0.25rem 0;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Solitaire - Classic!</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rules.html" class="active">Rules</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="container">
+            <h2>1. Classic Solitaire Rules</h2>
+            <p>Classic Solitaire uses a standard 52 card deck of playing cards (without jokers).</p>
+            <p>The objective of the game is to reveal and sort cards in the main game area (called the tableau) and move them up into the foundation piles (4 boxes with an "A" inside). Once all cards are moved to the foundation, you win!</p>
+            
+            <div class="game-area">
+                <h4>Game Area</h4>
+                <p><strong>A. Foundation</strong> - B. Tableau - C. Stock Pile - D. Scoring - E. Main Navigation</p>
+            </div>
+            
+            <h3>Foundation</h3>
+            <p>There are 4 foundation piles (each of the 4 piles indicated by a box with an "A" inside). To begin building a foundation pile, an Ace must be placed in one of the slots. Cards of the same suit can be placed on top of the Ace in order from Ace to King. Once all 4 foundation piles are built up, the game is over.</p>
+            
+            <h3>Tableau</h3>
+            <p>The game begins with a cascading arrangement of cards (randomly dealt) being placed in the 7 tableau columns face down with the top card in each column revealed. Card sequences can be built by placing cards in descending values (e.g., J, 10, 9, 8, etc.) and in alternating colors (Red, Black) on top of each other. Within the tableau area, sequences of cards or partially completed piles can be moved on top of other cards in other columns as long as it will continue the descending card sequence. After a card is moved from a column leaving a face down card behind, the new card will automatically be flipped over to reveal it. Any Empty column can be filled with a King or pile of cards with a King at the top.</p>
+            
+            <h3>Stock Pile</h3>
+            <p>The stock pile contains the remaining cards that have not yet been moved to the foundation or to the tableau areas. Tapping on the top of the stock pile flips and reveals the next card in the deck (flip 1 card or 3 cards at a time depending on the draw option that is selected). Move cards from the stock pile area to either the foundation or to the tableau to continue sequencing cards as long as it is a legal move based on the rules for the tableau. Once all of the cards are flipped over from the stock pile, it can be reset by clicking the empty card slot with the reset arrow icon. In this game mode, the stock pile can be reset as many times as you would like for you to cycle through them again.</p>
+            
+            <div class="scoring-table">
+                <h4>Scoring</h4>
+                <ul>
+                    <li>Card to Foundation +15 pts</li>
+                    <li>Card from Flip Pile to Tableau +5 pts</li>
+                    <li>Reveal new card on Tableau +5 pts</li>
+                    <li>Reset Stock Pile -15 pts</li>
+                    <li>Every 30 seconds that pass -5 pts</li>
+                    <li>Use an Undo -15 pts</li>
+                    <li>Use a Hint – Free if in inventory or -5 pts</li>
+                    <li>Take a card from the foundation and put it back in play on the Tableau -5 pts</li>
+                    <li>Bonus Points when finished =100,000 pts / (seconds it took to finish)</li>
+                </ul>
+            </div>
+            
+            <div class="options-list">
+                <h4>Standard Game Options</h4>
+                <ul>
+                    <li><strong>3 Card Draw</strong> - Switch to this mode where every time you tap the top card in the stock pile, 3 cards will be flipped over. You can only access the top card, making this mode more challenging than playing single card mode.</li>
+                    <li><strong>Left Handed Deal</strong> - This option will flip the game orientation so that the stock pile is on the left making the game a little easier to play for left handed players.</li>
+                    <li><strong>Show Score/Time</strong> - This option will hide the top area. Your Score, Time and Moves are still being captured in the background so this can always be shown again in the future.</li>
+                    <li><strong>All Winning Deals</strong> - When this option is selected, all of the new deals can be won. They are not always easy but can be won depending on how the round is played!</li>
+                    <li><strong>Tap Cards to Move</strong> - This game option will remove the ability to tap a card and have it automatically move to a valid location. You will have to press and hold a card you want to move and drag it to the location you want it to go. If the move is not valid, the card will move back to its original location.</li>
+                    <li><strong>Show Hints</strong> - The Hint button at the bottom in the main navigation can be hidden to make the game a little harder.</li>
+                    <li><strong>Show Undos</strong> - The Undo button at the bottom in the main navigation can be hidden to make the game a little harder.</li>
+                </ul>
+            </div>
+            
+            <h2>2. Vegas Solitaire Rules</h2>
+            <p>Vegas Solitaire uses a standard 52 card deck of playing cards (without jokers).</p>
+            <p>The overall goal is to earn more money than is wagered. The player starts with an initial wager of -$52 (-$1 for every card in the deck) and the objective of the game is to reveal and sort cards in the main game area (called the tableau) and move them up into the foundation piles (4 boxes with "A" inside). Once cards are moved to the foundation it will earn the player $. Move all of the cards to the foundation to win a maximum of $208.</p>
+            
+            <div class="game-area">
+                <h4>Game Area</h4>
+                <p><strong>A. Foundation</strong> - B. Tableau - C. Stock Pile - D. Scoring - E. Main Navigation</p>
+            </div>
+            
+            <h3>Foundation</h3>
+            <p>There are 4 foundation piles (each of the 4 piles indicated by a box with an "A" inside). To begin building a foundation pile, an Ace must be placed in one of the slots. Cards of the same suit can be placed on top of the Ace in order from Ace to King. Once all 4 foundation piles are built up, the game is over.</p>
+            
+            <h3>Tableau</h3>
+            <p>The game begins with a cascading arrangement of cards (randomly dealt) being placed in the 7 tableau columns face down with the top card in each column revealed. Card sequences can be built by placing cards in descending values (e.g., J, 10, 9, 8, etc.) and in alternating colors (Red, Black) on top of each other. Within the tableau area, sequences of cards or partially completed piles can be moved on top of other cards in other columns as long as it will continue the descending card sequence. After a card is moved from a column leaving a face down card behind, the new card will automatically be flipped over to reveal it. Any Empty column can be filled with a King or pile of cards with a King at the top.</p>
+            
+            <h3>Stock Pile</h3>
+            <p>The stock pile contains the remaining cards that have not yet been moved to the foundation or to the tableau areas. Tapping on the top of the stock pile flips and reveals the next card in the deck (flip 1 card or 3 cards at a time depending on the draw option that is selected). Move cards from the stock pile area to either the foundation or to the tableau to continue sequencing cards as long as it is a legal move based on the rules for the tableau. Once all of the cards are flipped over from the stock pile, it is over. When the Draw 3 option is on, 3 passes are allowed through the stock pile before the game is over, otherwise only one pass is allowed.</p>
+            
+            <div class="scoring-table">
+                <h4>Scoring</h4>
+                <ul>
+                    <li>Initial wager -$52 (-$1 for every card in the deck)</li>
+                    <li>Cards to the foundation +$5</li>
+                    <li>Foundation back to the Tableau -$5</li>
+                    <li>Hint $0</li>
+                    <li>Undo $0</li>
+                </ul>
+            </div>
+            
+            <h4>Cumulative Scoring</h4>
+            <p>With the Vegas cumulative option on (in settings), the overall $ value is maintained between games, otherwise if this option is off the starting wager is reset at the start of each new game.</p>
+            
+            <div class="options-list">
+                <h4>Vegas Game Options</h4>
+                <ul>
+                    <li><strong>Cumulative Scoring</strong> - When this game mode is selected, your overall $ value carries over between games. Each game will cost you $52 to start. How high can build up your $ balance? Each game mode for 1 Card Draw or 3 Card draw will have its own cumulative total. Once this mode is selected, a new option will appear to allow you to reset your cumulative total.</li>
+                    <li><strong>Reset Cumulative</strong> - Pressing this option will reset your game $ to 0 and redeal a new game (which costs you $52) so you will begin again with a balance of -$52.</li>
+                    <li><strong>3 Card Draw</strong> - Switch to this mode where every time you tap the top card in the stock pile, 3 cards will be flipped over. You can only access the top card, making this mode more challenging than playing single card mode. When 3 Card Draw is active, you only have a limited amount of times to go through the deck.</li>
+                    <li><strong>Left Handed Deal</strong> - This option will flip the game orientation so that the stock pile is on the left making the game a little easier to play for left handed players.</li>
+                    <li><strong>Show Score/Time</strong> - This option will hide the top area. Your Score, Time and Moves are still being captured in the background so this can always be shown again in the future.</li>
+                    <li><strong>Tap Cards to Move</strong> - This game option will remove the ability to tap a card and have it automatically move to a valid location. You will have to press and hold a card you want to move and drag it to the location you want it to go. If the move is not valid, the card will move back to its original location.</li>
+                    <li><strong>Show Hints</strong> - The Hint button at the bottom in the main navigation can be hidden to make the game a little harder.</li>
+                    <li><strong>Show Undos</strong> - The Undo button at the bottom in the main navigation can be hidden to make the game a little harder.</li>
+                </ul>
+            </div>
+            
+            <h2>3. Daily Challenges</h2>
+            
+            <h3>Game Format</h3>
+            <p>Each day, a new challenge is available to play. The challenge will be a standard Classic Solitaire 1 card game format. Each of the daily challenges are winnable but at times may require a certain sequence of moves to be played in order to win (If you get stuck, you are able to replay the game to try again or quit if you can't figure it out). You can only finish the daily challenge once a day and will have to wait for the following day to play again.</p>
+            
+            <h3>Progress</h3>
+            <p>If you can solve the challenge, you will be awarded your daily progress. Daily challenges do not have to be completed every single day as each completed day will move your overall progress forward by 1 (If you miss a daily challenge, your progress will not be reset. The next day, you can pick up where you left off). Once you reach one of the thresholds (10, 20 and 30 Daily Challenges Complete, you are awarded a larger prize). After you have completed 30 daily challenges, the progress bar will be reset the next day you return and you can complete the 30 day challenge again.</p>
+            
+            <h3>Scoring</h3>
+            <p>Scoring will follow the same scoring structure as the Classic Solitaire game.</p>
+            
+            <h3>Sharing Your Score</h3>
+            <p>After you complete a Daily Challenge, you are able to share that score from the results screen or the Daily Challenge recap screen up until the next day's challenge starts (indicated by the red timer).</p>
+            
+            <div class="controls-section">
+                <h2>4. Game Controls</h2>
+                
+                <h4>Flipping New Stock Pile Cards</h4>
+                <p>Tapping the top card of the stock pile will flip it over.</p>
+                
+                <h4>Resetting the Stock Pile</h4>
+                <p>Tapping the reset icon "circle arrow" in the stock pile area will reset the remaining stock pile cards.</p>
+                
+                <h4>Moving Cards by Pressing and Dragging</h4>
+                <p>Press and hold to drag cards from one position to another and then release the card(s) to drop it. The card(s) will automatically lock into the closest legal position or be returned to the original position if a legal move cannot be made). Drag an entire stack of cards or only a portion of the stack by pressing in the middle of a stack to drag only some of the cards to a new column.</p>
+                
+                <h4>Moving Cards by Tapping</h4>
+                <p>Tap a card to automatically move it to a location without dragging it (it will move to the new legal position where it could move). If there are multiple legal locations for the card to move to, the system will randomly select one of the new legal positions.</p>
+                
+                <h4>New Shuffle</h4>
+                <p>If you cannot continue or want to restart the current game, click the main navigation icon "Card icon with the +" to restart your current game with a brand-new shuffle. You will lose your current progress in the game you are in.</p>
+                
+                <h4>Hints</h4>
+                <p>If there is a possible move to make, click the main navigation hint icon which will be visible and can be pressed to automatically move one of the cards in your game. If there are no legal moves for you to make, the button will be semi-transparent and inactive. Using hints will decrease your score.</p>
+                
+                <h4>Redo</h4>
+                <p>After moving a card at any point in the game, the redo button in the main navigation will revert the card positions to their positions before the last move. Tapping the redo multiple times will continue to revert the game to earlier states.</p>
+                
+                <h4>Changing the Game Type</h4>
+                <p>To change the game type, tap settings and scroll to "Game Options" and press the name of the game type you wish to play (Standard or Vegas) and select the desired options for that game variation.</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="contact-info">
+                <p>If you have any questions please contact us:</p>
+                <p>By Email: <a href="mailto:infowizkidproductions@gmail.com">infowizkidproductions@gmail.com</a></p>
+            </div>
+            <p>&copy; 2022 WizKid Productions</p>
+        </div>
+    </footer>
+</body>
+</html>

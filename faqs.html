@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Solitaire Classic!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        nav {
+            background-color: #34495e;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: #2c3e50;
+        }
+        
+        main {
+            background-color: white;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .last-updated {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .faq-item {
+            background-color: #f8f9fa;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            background-color: #3498db;
+            color: white;
+            padding: 1rem 1.5rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .faq-question:hover {
+            background-color: #2980b9;
+        }
+        
+        .faq-answer {
+            padding: 1.5rem;
+            background-color: white;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .faq-answer p {
+            margin-bottom: 1rem;
+        }
+        
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 1rem 0;
+        }
+        
+        .controls-section {
+            background-color: #e8f4f8;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .controls-section h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .controls-section h4 {
+            color: #34495e;
+            margin: 1rem 0 0.5rem 0;
+        }
+        
+        .controls-section p {
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .contact-info {
+            margin: 1rem 0;
+        }
+        
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav li {
+                margin: 0.25rem 0;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .faq-question {
+                font-size: 1rem;
+                padding: 0.75rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Solitaire - Classic!</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rules.html">Rules</a></li>
+                <li><a href="faqs.html" class="active">FAQs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="container">
+            <div class="last-updated">
+                <strong>FAQs</strong><br>
+                Last Updated: April 4, 2023
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Why are there ads and can I turn them off?</div>
+                <div class="faq-answer">
+                    <p>Please consider that this game is free to download. Advertising revenue allows our small development team to address feedback and to evolve the product over time to provide a great experience for our players.</p>
+                    
+                    <p>You can turn off advertising when you upgrade the game to Premium. This will remove ads for the duration of your subscription.</p>
+                    
+                    <p>If you would like to report a specific issue with an ad that is being served to you, please contact at <a href="mailto:infowizkidproductions@gmail.com">infowizkidproductions@gmail.com</a> and send us an image of the ad along with a description of the situation and we will try to help resolve this for you.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: What's the difference between Classic Scoring and Vegas Scoring?</div>
+                <div class="faq-answer">
+                    <p>Essentially, Classic Scoring uses a scoring table that earns you points based on how many cards are flipped over and moved to the foundation in a certain amount of time whereas Vegas Scoring will turn your score into $ dollars where you earn $ for moving cards to the foundation.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Can I change the designs of the cards or background?</div>
+                <div class="faq-answer">
+                    <p>Yes! You can change the look of the game by modifying the Visual Themes.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: How do I change the Card Designs & Game Backgrounds?</div>
+                <div class="faq-answer">
+                    <p>To change the card designs and game backgrounds:</p>
+                    <ol>
+                        <li>Go to the main menu</li>
+                        <li>Tap on "Settings"</li>
+                        <li>Scroll down to "Visual Themes"</li>
+                        <li>Select from available card backs and backgrounds</li>
+                        <li>Some themes may require coins to unlock</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: How do I earn coins in the game?</div>
+                <div class="faq-answer">
+                    <p>You can earn coins by:</p>
+                    <ul>
+                        <li>Completing daily challenges</li>
+                        <li>Achieving high scores</li>
+                        <li>Unlocking achievements</li>
+                        <li>Playing games regularly</li>
+                    </ul>
+                    <p>Coins can be used to unlock special card designs, backgrounds, and other premium features.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: What are Daily Challenges?</div>
+                <div class="faq-answer">
+                    <p>Daily Challenges are special solitaire games that are winnable but may require specific sequences of moves to complete. Each day brings a new challenge, and you can only complete each challenge once per day. Completing challenges helps you progress through achievement milestones and earn rewards.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: How do I share my scores with friends?</div>
+                <div class="faq-answer">
+                    <p>You can share your scores from:</p>
+                    <ul>
+                        <li>The results screen after completing a game</li>
+                        <li>The Daily Challenge recap screen</li>
+                        <li>The leaderboards section</li>
+                    </ul>
+                    <p>Sharing is available until the next day's challenge starts (indicated by the red timer).</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: Can I play the game offline?</div>
+                <div class="faq-answer">
+                    <p>Yes! The core solitaire gameplay works completely offline. However, some features like leaderboards, daily challenges, and sharing may require an internet connection.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: How do I reset my game statistics?</div>
+                <div class="faq-answer">
+                    <p>To reset your game statistics:</p>
+                    <ol>
+                        <li>Go to Settings</li>
+                        <li>Look for "Reset Statistics" or "Clear Data"</li>
+                        <li>Confirm the reset action</li>
+                    </ol>
+                    <div class="highlight">
+                        <strong>Warning:</strong> This action cannot be undone and will permanently delete your game statistics, achievements, and progress.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: The game seems slow or laggy. What can I do?</div>
+                <div class="faq-answer">
+                    <p>If you're experiencing performance issues:</p>
+                    <ul>
+                        <li>Close other apps running in the background</li>
+                        <li>Restart your device</li>
+                        <li>Make sure you have the latest version of the game</li>
+                        <li>Check if your device meets the minimum system requirements</li>
+                    </ul>
+                    <p>If problems persist, please contact us with your device model and iOS/Android version.</p>
+                </div>
+            </div>
+            
+            <div class="controls-section">
+                <h3>Game Controls Reference</h3>
+                
+                <h4>Flipping New Stock Pile Cards</h4>
+                <p>Tapping the top card of the stock pile will flip it over.</p>
+                
+                <h4>Resetting the Stock Pile</h4>
+                <p>Tapping the reset icon "circle arrow" in the stock pile area will reset the remaining stock pile cards.</p>
+                
+                <h4>Moving Cards by Pressing and Dragging</h4>
+                <p>Press and hold to drag cards from one position to another and then release the card(s) to drop it. The card(s) will automatically lock into the closest legal position or be returned to the original position if a legal move cannot be made). Drag an entire stack of cards or only a portion of the stack by pressing in the middle of a stack to drag only some of the cards to a new column.</p>
+                
+                <h4>Moving Cards by Tapping</h4>
+                <p>Tap a card to automatically move it to a location without dragging it (it will move to the new legal position where it could move). If there are multiple legal locations for the card to move to, the system will randomly select one of the new legal positions.</p>
+                
+                <h4>New Shuffle</h4>
+                <p>If you cannot continue or want to restart the current game, click the main navigation icon "Card icon with the +" to restart your current game with a brand-new shuffle. You will lose your current progress in the game you are in.</p>
+                
+                <h4>Hints</h4>
+                <p>If there is a possible move to make, click the main navigation hint icon which will be visible and can be pressed to automatically move one of the cards in your game. If there are no legal moves for you to make, the button will be semi-transparent and inactive. Using hints will decrease your score.</p>
+                
+                <h4>Redo</h4>
+                <p>After moving a card at any point in the game, the redo button in the main navigation will revert the card positions to their positions before the last move. Tapping the redo multiple times will continue to revert the game to earlier states.</p>
+                
+                <h4>Changing the Game Type</h4>
+                <p>To change the game type, tap settings and scroll to "Game Options" and press the name of the game type you wish to play (Standard or Vegas) and select the desired options for that game variation.</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="contact-info">
+                <p>If you have any questions please contact us:</p>
+                <p>By Email: <a href="mailto:infowizkidproductions@gmail.com">infowizkidproductions@gmail.com</a></p>
+            </div>
+            <p>&copy; 2022 WizKid Productions</p>
+        </div>
+    </footer>
+</body>
+</html>
