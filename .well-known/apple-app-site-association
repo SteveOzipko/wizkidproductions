@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["Z374G8M4EE.com.wizkid.solvable.solitaire"],
+        "components": [
+          { "/": "/solvable/deal/*", "comment": "Beat-my-deal challenge links: the deal is in the #fragment" },
+          { "/": "/solvable/deal" }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solitaire Challenge · Solvable Solitaire</title>
+    <meta name="description" content="A friend challenged you to a solitaire deal. Play it in Solvable Solitaire: no ads, ever.">
+    <meta name="apple-itunes-app" content="app-id=6839306480">
+    <meta property="og:title" content="Can you beat my solitaire deal?">
+    <meta property="og:description" content="Play the same deal in Solvable Solitaire. No ads, ever.">
+    <meta property="og:image" content="https://wizkidproductions.app/solvable/logo.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Avenir Next', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh; color: #fff; text-align: center;
+            background: radial-gradient(120% 80% at 50% 0%, #3E86F0 0%, #1E4FB8 45%, #14275E 100%) fixed;
+            display: flex; align-items: center; justify-content: center; padding: 24px 16px;
+        }
+        main { max-width: 440px; width: 100%; }
+        .logo { width: 240px; max-width: 70%; height: auto; }
+        h1 { font-size: 28px; line-height: 1.2; margin: 12px 0 8px; font-weight: 800; }
+        .game { display: inline-block; margin: 4px 0 18px; padding: 6px 14px; border-radius: 999px; background: rgba(255,255,255,.14); font-weight: 700; }
+        .goal { font-size: 18px; color: #FFD66B; font-weight: 700; margin-bottom: 22px; min-height: 1em; }
+        .get { display: inline-block; padding: 14px 28px; border-radius: 999px; background: linear-gradient(#FFD35C, #F5A623); color: #3A2600; font-weight: 800; font-size: 18px; text-decoration: none; box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+        .note { margin-top: 18px; font-size: 14px; opacity: .85; line-height: 1.5; }
+        .points { margin-top: 26px; font-size: 15px; opacity: .9; line-height: 1.8; }
+        .bad h1 { font-size: 24px; }
+    </style>
+</head>
+<body>
+<main id="m">
+    <img class="logo" src="../logo.png" alt="Solvable Solitaire">
+    <h1 id="title">You've been challenged!</h1>
+    <div class="game" id="game">Solitaire</div>
+    <p class="goal" id="goal"></p>
+    <a class="get" href="https://apps.apple.com/app/id6839306480">Get Solvable Solitaire</a>
+    <p class="note">Already have the app? Tap the challenge link in Messages (or wherever it was sent) and it opens straight to this deal.</p>
+    <p class="points">No ads, ever · 14 solitaire games<br>Every deal can be won · Free to play</p>
+</main>
+<script>
+    // The deal lives in the #fragment (see the app's share.js): g = game mode, d = cards, t = seconds, m = moves.
+    const q = new URLSearchParams(location.hash.slice(1)), mode = q.get('g') || '';
+    const NAMES = { spider: 'Spider', freecell: 'FreeCell', pyramid: 'Pyramid', tripeaks: 'TriPeaks', golf: 'Golf', yukon: 'Yukon',
+        scorpion: 'Scorpion', fortythieves: 'Forty Thieves', canfield: 'Canfield', bakersdozen: "Baker's Dozen",
+        castle: 'Beleaguered Castle', clock: 'Clock', accordion: 'Accordion' };
+    const OPTS = { 'spider:1': '1 suit', 'spider:2': '2 suits', 'spider:4': '4 suits', 'yukon:yukon': 'Classic', 'yukon:russian': 'Russian' };
+    let name = null;
+    if (/^(STANDARD|VEGAS)_[13]_SINGLE$/.test(mode)) name = 'Klondike' + (mode.includes('_3_') ? ' · Draw 3' : '') + (mode.startsWith('VEGAS') ? ' · Vegas' : '');
+    else if (NAMES[mode.split(':')[0]]) name = NAMES[mode.split(':')[0]] + (OPTS[mode] ? ' · ' + OPTS[mode] : '');
+    if (name && q.get('d')) {
+        document.getElementById('game').textContent = name;
+        const t = parseInt(q.get('t') || '0', 10), mv = parseInt(q.get('m') || '0', 10);
+        const clock = s => Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+        document.getElementById('goal').textContent = t > 0 ? `Your friend won this deal in ${clock(t)} (${mv} moves). Can you beat it?` : 'Can you win this deal?';
+    } else {
+        document.getElementById('m').classList.add('bad');
+        document.getElementById('title').textContent = 'Play Solvable Solitaire';
+        document.getElementById('game').textContent = 'No ads, ever';
+    }
+</script>
+</body>
+</html>
